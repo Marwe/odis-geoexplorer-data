@@ -4,7 +4,9 @@ const fs = require("fs");
 function getCKANData(mainCallback) {
   console.log("1. getCKANData ...");
 
-  const baseUrl = "https://datenregister.berlin.de/api/3/action/package_search";
+  //const baseUrl = "https://datenregister.berlin.de/api/3/action/package_search";
+  //const baseUrl = "https://ckan.govdata.de/api/3/action/package_search";
+  const baseUrl = "https://transparenz.karlsruhe.de/api/3/action/package_search";
   const rowsPerPage = 1000;
   let start = 0;
   let allEntries = [];

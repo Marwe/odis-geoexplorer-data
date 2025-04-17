@@ -463,6 +463,7 @@ async function generateEmbeddings() {
         try {
           const configuration = new Configuration({
             apiKey: process.env.OPENAI_KEY,
+            baseURL: process.env.OPENAI_URL,
           });
           const openai = new OpenAIApi(configuration);
 

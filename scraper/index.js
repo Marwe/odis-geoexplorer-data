@@ -29,12 +29,12 @@ async function runScraper() {
   // run these functions in order
   async.waterfall(
     [
-      // getCKANData,
-      // parseCKANData,
+      //getCKANData,
+       parseCKANData,
       // getAttributes,
       // getFisBrokerDescription,
       // getHtmlInfo,
-      writeMarkdowns,
+      // writeMarkdowns,
     ],
     function (err, result) {
       console.log("All scraper scripts have run");

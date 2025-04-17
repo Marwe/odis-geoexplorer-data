@@ -21,14 +21,22 @@ function parseCKANData(mainCallback) {
     let geoData = {};
     // get only WFS and WMS
     item.resources.forEach(function (resource) {
+      //console.log("title: ",resource.title, "url tolower: ", resource.url.toLowerCase());
       if (
         (resource.url
           .toLowerCase()
-          .includes("REQUEST=GetCapabilities&SERVICE=wms".toLowerCase()) ||
+          .includes("service=wms".toLowerCase()) ||
           resource.url
             .toLowerCase()
-            .includes("REQUEST=GetCapabilities&SERVICE=wfs".toLowerCase())) &&
+            .includes("service=wfs".toLowerCase())) &&
         (resource.format === "WFS" || resource.format === "WMS")
+        // (resource.url
+        //   .toLowerCase()
+        //   .includes("REQUEST=GetCapabilities&SERVICE=wms".toLowerCase()) ||
+        //   resource.url
+        //     .toLowerCase()
+        //     .includes("REQUEST=GetCapabilities&SERVICE=wfs".toLowerCase())) &&
+        // (resource.format === "WFS" || resource.format === "WMS")
       ) {
         geoResource = resource;
       }
